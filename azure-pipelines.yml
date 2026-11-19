@@ -24,13 +24,13 @@ steps:
   inputs:
     versionType: 'AutoVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
-    orchestratorConnection: 'BUGbash'
+    orchestratorConnection: 'BUGBash'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     traceLevel: 'Verbose'
 
 - task: UiPathDeploy@6
   inputs:
-    orchestratorConnection: 'BUGbash'
+    orchestratorConnection: 'BUGBash'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
     folderName: 'Test'
     environments: 'prod'
