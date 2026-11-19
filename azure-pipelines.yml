@@ -28,7 +28,7 @@ steps:
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     traceLevel: 'Verbose'
 
-- task: UiPathDeploy@5
+- task: UiPathDeploy@6
   inputs:
     orchestratorConnection: 'BUGbash'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
