@@ -1,0 +1,9 @@
+{
+  "issueKeyTestcaseValues": {},
+  "testManagerBasePath": "https://cloud.uipath.com/TestCloudGPS_PS/Playground/testmanager_/",
+  "defaultProject": {
+    "id": "2073f371-7b3f-0000-2ab7-0b4a5c65d3d4",
+    "name": "Testing_Bash",
+    "key": "TBC"
+  }
+}
