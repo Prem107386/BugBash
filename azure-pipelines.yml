@@ -28,6 +28,8 @@ steps:
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     traceLevel: 'Verbose'
 
+
+
 - task: UiPathDeploy@6
   inputs:
     orchestratorConnection: 'BUGBash'
@@ -35,7 +37,13 @@ steps:
     folderName: 'Test'
     environments: 'prod'
 
-
+- task: UiPathTest@6
+  inputs:
+    testTarget: 'TestSet'
+    orchestratorConnection: 'BUGBash'
+    projectKey: 'BUG'
+    testSet: 'Bug_Test'
+    folderName: 'Test'
 
 - task: PublishBuildArtifacts@1
   inputs:
