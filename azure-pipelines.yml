@@ -20,29 +20,13 @@ steps:
 - task: UiPathInstallPlatform@6
   inputs:
     cliVersion: 'Windows.25.10.7'
-- task: UiPathPack@6
-  inputs:
-    versionType: 'AutoVersion'
-    projectJsonPath: '$(Build.SourcesDirectory)'
-    orchestratorConnection: 'BUGBash'
-    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-    traceLevel: 'Verbose'
-
-
-
-- task: UiPathDeploy@6
-  inputs:
-    orchestratorConnection: 'BUGBash'
-    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
-    folderName: 'Test'
-    environments: 'prod'
 
 - task: UiPathTest@6
   inputs:
     testTarget: 'TestSet'
     orchestratorConnection: 'BUGBash'
     projectKey: 'BUG'
-    testSet: 'Bug_Test'
+    testSet: 'BUG:1'
     folderName: 'Test'
 
 - task: PublishBuildArtifacts@1
